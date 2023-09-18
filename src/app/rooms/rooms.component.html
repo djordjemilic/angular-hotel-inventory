@@ -6,6 +6,10 @@
 
 {{rooms?.availableRooms ?? "No Rooms Available"}}
 
+<div *ngIf="selectedRoom">
+  {{selectedRoom | json}}
+</div>
+
 <div *ngIf="rooms.availableRooms > 0">
   <app-rooms-list [rooms]="roomList" (selectedRoom)="selectRoom($event)"></app-rooms-list>
 </div>

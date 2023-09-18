@@ -16,6 +16,7 @@ export class RoomsComponent implements OnInit {
     totalRooms: 15
   }
 
+  selectedRoom!: RoomList;
   roomList: RoomList[] = []
 
   constructor() {
@@ -58,7 +59,7 @@ export class RoomsComponent implements OnInit {
   }
 
   selectRoom(room: RoomList) {
-    console.log(room)
+    this.selectedRoom = room;
   }
 
 }
