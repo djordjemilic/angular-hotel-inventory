@@ -17,7 +17,8 @@ export class RoomsComponent implements OnInit {
   }
 
   selectedRoom!: RoomList;
-  roomList: RoomList[] = []
+  roomList: RoomList[] = [];
+  title = "Room List";
 
   constructor() {
   }
@@ -56,10 +57,25 @@ export class RoomsComponent implements OnInit {
 
   toggleRooms() {
     this.hideRooms = !this.hideRooms;
+    this.title = "Rooms List";
   }
 
   selectRoom(room: RoomList) {
     this.selectedRoom = room;
+  }
+
+  addRoom() {
+    const room: RoomList = {
+      roomNumber: 104,
+      roomType: 'Default Room',
+      amenities: 'TV, AC, WiFi, etc',
+      price: 5000,
+      photos: 'https://picsum.photos/200/300',
+      checkInTime: new Date('11-Nov-2020 10:00 AM'),
+      checkOutTime: new Date('11-Nov-2020 12:00 PM'),
+    }
+
+    this.roomList = [...this.roomList, room];
   }
 
 }
